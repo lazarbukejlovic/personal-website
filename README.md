@@ -2,7 +2,7 @@
 
 Premium personal engineering website built to present my work, experience, resume, and contact flow in a more serious and product-oriented way than a typical portfolio template.
 
-**Live Demo:** [lazar-personalwebsite.lovable.app](https://lazar-personalwebsite.lovable.app)
+**Live Demo:** [personal-website.vercel.app](https://personal-website.vercel.app)
 
 ## Overview
 
@@ -52,7 +52,7 @@ It moves beyond a standard portfolio and acts more like a personal product layer
 - Vite
 - Tailwind CSS
 - Supabase
-- Lovable Cloud
+- Vercel
 - Edge Functions / backend logic for booking flow
 - Storage integration for profile image and resume asset handling
 

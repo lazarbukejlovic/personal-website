@@ -4,7 +4,7 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+const EMAIL_API_KEY = Deno.env.get("EMAIL_API_KEY");
 
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -57,19 +57,20 @@ Deno.serve(async (req) => {
 </body>
 </html>`;
 
-    if (!LOVABLE_API_KEY) {
-      console.warn("LOVABLE_API_KEY not set — skipping email send");
+    if (!EMAIL_API_KEY) {
+      console.warn("EMAIL_API_KEY not set — skipping email send");
       return new Response(
         JSON.stringify({ success: false, reason: "email_not_configured" }),
         { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    const emailResponse = await fetch("https://api.lovable.dev/v1/email/send", {
+    const emailApiUrl = Deno.env.get("EMAIL_SEND_URL") ?? "https://personal-website.vercel.app/api/email/send";
+    const emailResponse = await fetch(emailApiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${LOVABLE_API_KEY}`,
+        Authorization: `Bearer ${EMAIL_API_KEY}`,
       },
       body: JSON.stringify({
         to: email,
