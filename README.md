@@ -2,7 +2,7 @@
 
 Premium personal engineering website built to present my work, experience, resume, and contact flow in a more serious and product-oriented way than a typical portfolio template.
 
-**Live Demo:** [personal-website.vercel.app](https://personal-website.vercel.app)
+## [Live Demo](https://personal-website-tau-sandy.vercel.app/)
 
 ## Overview
 
@@ -69,6 +69,6 @@ This project demonstrates:
 
 ## Contact
 
-- **Email:** [lazarbukejlovic@icloud.com](mailto:lazarbukejlovic@icloud.com)
-- **LinkedIn:** [linkedin.com/in/lazar-bukejlovic](https://www.linkedin.com/in/lazar-bukejlovic)
-- **GitHub:** [github.com/lazarbukejlovic](https://github.com/lazarbukejlovic)
+- ## [Email](mailto:lazarbukejlovic@icloud.com)
+- ## [LinkedIn](https://www.linkedin.com/in/lazar-bukejlovic)
+- ## [GitHub](https://github.com/lazarbukejlovic)
