@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Mail, Link2, Code2 } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 
-const RESUME_PDF_URL = "https://obibedjddoyfsbnndrhf.supabase.co/storage/v1/object/public/assets/Resume.pdf";
+const RESUME_PDF_URL = "/Resume.pdf";
 
 const EXPERIENCE = [
   {
