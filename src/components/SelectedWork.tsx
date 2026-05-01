@@ -10,6 +10,13 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
+    title: "GeoRisk",
+    description:
+      "A geopolitical risk intelligence platform combining conflict monitoring, market impact analysis, historical context, and simulated humanitarian relief tracking.",
+    liveUrl: "https://georisk-platform.vercel.app/",
+    githubUrl: "https://github.com/lazarbukejlovic/georisk-platform",
+  },
+  {
     title: "DevPath Hub",
     description:
       "A developer platform centered on structured growth workflows, engineering roadmap tracking, backend-connected progress management, and execution-focused developer tooling.",
