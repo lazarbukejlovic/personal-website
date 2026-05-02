@@ -113,6 +113,201 @@
       linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
     background-size: 60px 60px;
   }
+
+  .hero-premium-bg {
+    background:
+      radial-gradient(circle at 16% 22%, rgb(209 117 32 / 0.17), transparent 36%),
+      radial-gradient(circle at 78% 8%, rgb(255 255 255 / 0.08), transparent 35%),
+      linear-gradient(160deg, #0a0a0c 0%, #0d0d10 42%, #0a0a0b 100%);
+  }
+
+  .hero-tech-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.03) 1px, transparent 1px),
+      repeating-linear-gradient(
+        -32deg,
+        transparent 0,
+        transparent 54px,
+        rgb(255 255 255 / 0.022) 54px,
+        rgb(255 255 255 / 0.022) 56px
+      );
+    background-size: 72px 72px, 72px 72px, auto;
+    mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.95), rgb(0 0 0 / 0.55), transparent 96%);
+  }
+
+  .hero-comet-field {
+    isolation: isolate;
+  }
+
+  .hero-comet {
+    position: absolute;
+    width: var(--comet-length, 170px);
+    height: 2px;
+    opacity: var(--comet-opacity, 0.2);
+    transform: rotate(-34deg);
+    transform-origin: left center;
+    background: linear-gradient(90deg, transparent 0%, rgb(255 251 224 / 0.9) 22%, rgb(255 208 93 / 0.94) 54%, rgb(255 158 55 / 0.92) 82%, transparent 100%);
+    filter: drop-shadow(0 0 16px rgb(255 179 64 / 0.52));
+    animation: hero-comet-fall 10.5s linear infinite;
+    will-change: transform, opacity;
+    z-index: 1;
+  }
+
+  .hero-comet::before {
+    content: "";
+    position: absolute;
+    right: 14%;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    transform: translateY(-50%);
+    background: rgb(255 222 137 / 0.94);
+    filter: blur(1.8px);
+  }
+
+  .hero-comet::after {
+    content: "";
+    position: absolute;
+    right: 17%;
+    top: 50%;
+    width: 48%;
+    height: 9px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, transparent, rgb(255 197 87 / 0.78), rgb(255 164 70 / 0.54), transparent);
+    filter: blur(5.1px);
+  }
+
+  .hero-comet-sm {
+    height: 1.5px;
+    filter: drop-shadow(0 0 10px rgb(255 189 82 / 0.42));
+  }
+
+  .hero-comet-md {
+    height: 2.5px;
+    filter: drop-shadow(0 0 15px rgb(255 181 74 / 0.56));
+  }
+
+  .hero-comet-lg {
+    height: 3.5px;
+    filter: drop-shadow(0 0 20px rgb(255 173 58 / 0.68));
+  }
+
+  .hero-comet-warm {
+    background: linear-gradient(90deg, transparent 0%, rgb(255 252 215 / 0.92) 18%, rgb(255 214 94 / 0.98) 50%, rgb(255 158 55 / 0.94) 82%, transparent 100%);
+  }
+
+  .hero-comet-cool {
+    background: linear-gradient(90deg, transparent 0%, rgb(240 245 255 / 0.78) 22%, rgb(255 220 123 / 0.8) 56%, rgb(255 174 84 / 0.74) 84%, transparent 100%);
+  }
+
+  .hero-comet-particle {
+    position: absolute;
+    width: var(--particle-size, 3px);
+    height: var(--particle-size, 3px);
+    border-radius: 9999px;
+    opacity: var(--particle-opacity, 0.28);
+    animation: hero-particle-fall 11s linear infinite;
+    will-change: transform, opacity;
+    z-index: 0;
+  }
+
+  .hero-comet-particle-warm {
+    background: rgb(255 212 114 / 0.9);
+    box-shadow: 0 0 14px rgb(255 176 54 / 0.62);
+  }
+
+  .hero-comet-particle-cool {
+    background: rgb(236 241 255 / 0.8);
+    box-shadow: 0 0 13px rgb(190 208 255 / 0.46);
+  }
+
+  .hero-comet-center-fade {
+    z-index: 2;
+    background:
+      radial-gradient(circle at 33% 44%, rgb(8 8 10 / 0.48) 0%, transparent 54%),
+      radial-gradient(circle at 79% 45%, rgb(8 8 10 / 0.57) 0%, transparent 52%);
+  }
+
+  .hero-photo-glow {
+    background: radial-gradient(circle at 35% 25%, rgb(255 179 106 / 0.24), transparent 62%);
+    filter: blur(12px);
+  }
+}
+
+@keyframes hero-comet-fall {
+  0% {
+    transform: translate3d(40vw, -34vh, 0) rotate(-34deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: calc(var(--comet-opacity, 0.2) * 1.03);
+  }
+  28% {
+    opacity: calc(var(--comet-opacity, 0.2) * 1.12);
+  }
+  80% {
+    opacity: calc(var(--comet-opacity, 0.2) * 1.06);
+  }
+  100% {
+    transform: translate3d(-52vw, 135vh, 0) rotate(-34deg);
+    opacity: 0;
+  }
+}
+
+@keyframes hero-particle-fall {
+  0% {
+    transform: translate3d(26vw, -28vh, 0);
+    opacity: 0;
+  }
+  22% {
+    opacity: calc(var(--particle-opacity, 0.28) * 1.1);
+  }
+  84% {
+    opacity: calc(var(--particle-opacity, 0.28) * 1.1);
+  }
+  100% {
+    transform: translate3d(-38vw, 126vh, 0);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-tech-grid {
+    opacity: 0.38;
+  }
+
+  .hero-comet {
+    animation-duration: 12.8s !important;
+  }
+
+  .hero-comet-lg {
+    opacity: calc(var(--comet-opacity, 0.2) * 0.72);
+  }
+
+  .hero-comet-particle {
+    animation-duration: 11.8s !important;
+  }
+
+  .hero-comet-center-fade {
+    background:
+      radial-gradient(circle at 34% 42%, rgb(8 8 10 / 0.52) 0%, transparent 56%),
+      radial-gradient(circle at 79% 44%, rgb(8 8 10 / 0.56) 0%, transparent 54%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-comet,
+  .hero-comet-particle {
+    animation: none;
+    opacity: 0.11;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 12mm;
 }
 
 @media print {
@@ -124,6 +319,42 @@
     background: white !important;
     color: black !important;
     font-size: 11pt;
+  }
+
+  .resume-document,
+  .resume-document * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume-stage {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .resume-sheet {
+    max-width: none !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: #f7f3ec !important;
+  }
+
+  .resume-sidebar {
+    background: linear-gradient(180deg, #101013 0%, #17171b 100%) !important;
+  }
+
+  .resume-main {
+    background: #f7f3ec !important;
+  }
+
+  .resume-block,
+  .resume-link {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .print-page {

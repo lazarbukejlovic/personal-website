@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 140" width="320" height="140">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111115"/>
+      <stop offset="100%" stop-color="#0d0d10"/>
+    </linearGradient>
+    <radialGradient id="radGlow" cx="88%" cy="12%" r="42%">
+      <stop offset="0%" stop-color="#c97d2a" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#c97d2a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="320" height="140" rx="12" fill="url(#bgGrad)"/>
+  <rect width="320" height="140" rx="12" fill="url(#radGlow)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#ffffff" stroke-opacity="0.038" stroke-width="0.6">
+    <line x1="64"  y1="0"   x2="64"  y2="140"/>
+    <line x1="128" y1="0"   x2="128" y2="140"/>
+    <line x1="192" y1="0"   x2="192" y2="140"/>
+    <line x1="256" y1="0"   x2="256" y2="140"/>
+    <line x1="0"   y1="46"  x2="320" y2="46"/>
+    <line x1="0"   y1="93"  x2="320" y2="93"/>
+  </g>
+
+  <!-- Border -->
+  <rect width="320" height="140" rx="12" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="1"/>
+
+  <!-- Gold accent rule -->
+  <rect x="24" y="36" width="30" height="2.5" rx="1.25" fill="#d98a2e" opacity="0.92"/>
+
+  <!-- Primary label -->
+  <text x="24" y="68"
+    font-family="'Space Grotesk', system-ui, -apple-system, sans-serif"
+    font-size="17" font-weight="700" letter-spacing="2.8"
+    fill="#ede8df" opacity="0.96">PRIVATE</text>
+  <text x="24" y="90"
+    font-family="'Space Grotesk', system-ui, -apple-system, sans-serif"
+    font-size="17" font-weight="700" letter-spacing="2.8"
+    fill="#ede8df" opacity="0.96">CLIENTS</text>
+
+  <!-- Sublabel -->
+  <text x="24" y="113"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="8.5" font-weight="400" letter-spacing="1.8"
+    fill="#d98a2e" opacity="0.84">FREELANCE FULL-STACK ENGINEER</text>
+
+  <!-- Abstract connected-node motif (right side) -->
+  <circle cx="253" cy="50"  r="3.5" fill="#d98a2e" opacity="0.54"/>
+  <circle cx="283" cy="36"  r="2.5" fill="#ffffff"  opacity="0.20"/>
+  <circle cx="299" cy="59"  r="2"   fill="#ffffff"  opacity="0.14"/>
+  <circle cx="269" cy="72"  r="3"   fill="#d98a2e" opacity="0.36"/>
+  <circle cx="291" cy="85"  r="2"   fill="#ffffff"  opacity="0.16"/>
+  <circle cx="256" cy="93"  r="1.5" fill="#d98a2e" opacity="0.28"/>
+
+  <g stroke="#d98a2e" stroke-opacity="0.30" stroke-width="0.85" fill="none">
+    <line x1="256.5" y1="50"   x2="280.5" y2="37"/>
+    <line x1="285.5" y1="37.5" x2="297.5" y2="57.5"/>
+    <line x1="298"   y1="61"   x2="272"   y2="71"/>
+    <line x1="272"   y1="75"   x2="289.5" y2="83.5"/>
+    <line x1="256"   y1="51.5" x2="267.5" y2="69.5"/>
+  </g>
+  <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="0.6" fill="none">
+    <line x1="255" y1="94.5" x2="268.5" y2="75.5"/>
+    <line x1="290" y1="87"   x2="257.5" y2="94.5"/>
+  </g>
+</svg>
