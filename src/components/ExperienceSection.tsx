@@ -19,10 +19,10 @@ const EXPERIENCE: ExperienceEntry[] = [
     imageAlt: "TokenFlow logo",
     logoHref: "https://www.atom.com/name/TokenFlow.ai",
     points: [
-      "Orchestrated delivery across multiple client-facing product streams, balancing parallel priorities while maintaining a consistent standard of execution.",
-      "Strengthened implementation quality, maintainability, and structural clarity across active product surfaces.",
-      "Improved backend-connected product flows with a focus on usability, scalability, and dependable end-to-end delivery.",
-      "Coordinated work across implementation, client communication, and ownership-heavy delivery tracks within a fast-moving product environment.",
+      "Built and improved client-facing web applications using React, TypeScript, Node.js, REST APIs, and backend-connected product flows across multiple active project streams.",
+      "Developed dashboard interfaces, authenticated user flows, form-heavy product screens, responsive layouts, and API-driven data views with a focus on usability, reliability, and maintainable component structure.",
+      "Implemented and refined frontend-to-backend workflows, including data fetching, validation states, loading/error/empty states, route handling, and production-focused UI behavior across desktop and mobile.",
+      "Collaborated directly on product requirements, client feedback, implementation priorities, and delivery planning, translating business needs into clear technical tasks and shipped features.",
     ],
   },
   {
@@ -32,10 +32,10 @@ const EXPERIENCE: ExperienceEntry[] = [
     image: "/images/private-clients-badge.svg",
     imageAlt: "Private Clients – Freelance Full-Stack Engineer",
     points: [
-      "Delivered custom product applications for private clients operating in finance-oriented and digital asset-related environments.",
-      "Reengineered operational workflows from manual spreadsheet processes into structured software systems adopted for daily internal use.",
-      "Led collaborative product builds by coordinating feature direction, implementation priorities, and delivery as a hands-on engineer.",
-      "Spearheaded delivery across 10+ production-grade product initiatives, strengthening engineering depth across architecture, execution, and product quality.",
+      "Delivered custom full-stack web applications for private clients in finance-oriented and digital asset-related environments, turning operational requirements into usable internal software tools.",
+      "Built dashboard-driven products for tracking records, client activity, payments, subscriptions, project status, and operational workflows using React, TypeScript, Node.js, APIs, and structured data models.",
+      "Replaced manual spreadsheet-based processes with structured web applications, improving visibility, consistency, and day-to-day usability for client teams.",
+      "Implemented core product features including authentication flows, protected pages, CRUD-style data management, responsive UI, payment-related flows, and deployment-ready frontend architecture.",
     ],
   },
 ];

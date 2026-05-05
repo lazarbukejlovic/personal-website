@@ -100,9 +100,11 @@ const EXPERIENCE = [
     title: "Full-Stack Engineer",
     period: "February 2025 – Present",
     points: [
-      "Orchestrated delivery across multiple client-facing product streams, balancing parallel priorities while strengthening implementation quality and maintainability.",
-      "Architected and improved backend-connected product flows with emphasis on usability, structured execution, and scalable delivery.",
-      "Partnered across product implementation, client communication, and coordinated delivery in a high-ownership environment.",
+      "Built and improved client-facing web applications using React, TypeScript, Node.js, REST APIs, and backend-connected product flows across multiple active project streams.",
+      "Developed dashboard interfaces, authenticated user flows, form-heavy product screens, responsive layouts, and API-driven data views with a focus on usability, reliability, and maintainable component structure.",
+      "Implemented and refined frontend-to-backend workflows, including data fetching, validation states, loading/error/empty states, route handling, and production-focused UI behavior across desktop and mobile.",
+      "Collaborated directly on product requirements, client feedback, implementation priorities, and delivery planning, translating business needs into clear technical tasks and shipped features.",
+      "Supported debugging, refactoring, deployment preparation, Git/GitHub workflows, and final product polish to improve stability, code quality, and delivery consistency across client projects.",
     ],
   },
   {
@@ -110,10 +112,12 @@ const EXPERIENCE = [
     title: "Freelance Full-Stack Engineer",
     period: "December 2023 – February 2025",
     points: [
-      "Delivered custom product applications for private clients in finance-oriented and digital asset-related environments.",
-      "Reengineered operational workflows from manual spreadsheet processes into structured software systems adopted for daily internal use.",
-      "Led collaborative product builds across cross-functional contributors, coordinating feature direction, implementation priorities, and delivery as hands-on lead engineer.",
-      "Spearheaded delivery across 10+ production-grade product initiatives, strengthening engineering depth across architecture and execution quality.",
+      "Delivered custom full-stack web applications for private clients in finance-oriented and digital asset-related environments, turning operational requirements into usable internal software tools.",
+      "Built dashboard-driven products for tracking records, client activity, payments, subscriptions, project status, and operational workflows using React, TypeScript, Node.js, APIs, and structured data models.",
+      "Replaced manual spreadsheet-based processes with structured web applications, improving visibility, consistency, and day-to-day usability for client teams.",
+      "Implemented core product features including authentication flows, protected pages, CRUD-style data management, responsive UI, payment-related flows, and deployment-ready frontend architecture.",
+      "Led hands-on delivery from requirements to launch: clarifying scope, planning features, building the interface, connecting backend logic, testing flows, fixing bugs, and preparing projects for real use.",
+      "Coordinated with clients and collaborators across design, content, product direction, and implementation priorities while maintaining ownership over engineering quality and final delivery.",
     ],
   },
 ];
