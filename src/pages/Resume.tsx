@@ -175,6 +175,7 @@ const PROJECTS: ProjectItem[] = [
     name: "RoomPulse",
     description:
       "A workflow execution platform focused on task visibility, progress tracking, structured operations, and responsive product UX.",
+    href: "https://room-pulse-seven.vercel.app/",
   },
 ];
 
