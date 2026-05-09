@@ -10,6 +10,13 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
+    title: "AtlasBrief",
+    description:
+      "A production-ready travel-readiness and destination intelligence platform for evaluating destination fit, cost pressure, local rules, risk signals, saved monitoring, reports, and 30-90 day stay planning before booking.",
+    liveUrl: "https://atlasbrief.vercel.app",
+    githubUrl: "https://github.com/lazarbukejlovic/atlasbrief",
+  },
+  {
     title: "GeoRisk",
     description:
       "A geopolitical risk intelligence platform combining conflict monitoring, market impact analysis, historical context, and simulated humanitarian relief tracking.",
@@ -24,18 +31,18 @@ const PROJECTS: Project[] = [
     githubUrl: "https://github.com/lazarbukejlovic/devpath-hub",
   },
   {
-    title: "ForgeDesk",
-    description:
-      "A premium full-stack ecommerce product for workspace goods with Stripe checkout, account flows, saved setups, order management, and a role-protected admin dashboard.",
-    liveUrl: "https://forgedesk-eosin.vercel.app/",
-    githubUrl: "https://github.com/lazarbukejlovic/forgedesk",
-  },
-  {
     title: "EchoRoom",
     description:
       "A social communication app where posts become conversations through feed interaction, profiles, direct messaging, discovery, and live discussion rooms.",
     liveUrl: "https://echo-room-teal.vercel.app/",
     githubUrl: "https://github.com/lazarbukejlovic/echo-room",
+  },
+  {
+    title: "ForgeDesk",
+    description:
+      "A full-stack ecommerce workspace product with Stripe checkout, protected account flows, saved setups, order management, and role-protected admin tooling.",
+    liveUrl: "https://forgedesk-eosin.vercel.app/",
+    githubUrl: "https://github.com/lazarbukejlovic/forgedesk",
   },
   {
     title: "Foundry Studios",

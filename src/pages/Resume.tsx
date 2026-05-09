@@ -124,6 +124,12 @@ const EXPERIENCE = [
 
 const PROJECTS: ProjectItem[] = [
   {
+    name: "AtlasBrief",
+    description:
+      "Travel-readiness intelligence platform with Supabase Auth, Stripe billing, saved briefs, watchlists, reports, public dossiers, and 30-90 day stay planning.",
+    href: "https://atlasbrief.vercel.app",
+  },
+  {
     name: "GeoRisk",
     description:
       "Geopolitical risk intelligence platform for monitoring conflict, market impact, and structured scenario awareness.",
@@ -136,16 +142,16 @@ const PROJECTS: ProjectItem[] = [
     href: "https://devpath-hub.vercel.app/",
   },
   {
-    name: "ForgeDesk",
-    description:
-      "Premium full-stack ecommerce product with Stripe checkout, protected account flows, and operational admin tooling.",
-    href: "https://forgedesk-eosin.vercel.app/",
-  },
-  {
     name: "EchoRoom",
     description:
       "Social communication application built around conversation-first feeds, messaging, discovery, and live discussion rooms.",
     href: "https://echo-room-teal.vercel.app/",
+  },
+  {
+    name: "ForgeDesk",
+    description:
+      "A full-stack ecommerce workspace product with Stripe checkout, protected account flows, saved setups, order management, and role-protected admin tooling.",
+    href: "https://forgedesk-eosin.vercel.app/",
   },
   {
     name: "Foundry Studios",
@@ -156,7 +162,7 @@ const PROJECTS: ProjectItem[] = [
   {
     name: "Professional Personal Website",
     description:
-      "Premium personal engineering site with branded resume experience, strong positioning, and integrated contact flow.",
+      "A polished personal engineering website with branded resume experience, strong project positioning, and integrated contact flow.",
     href: "https://personal-website-tau-sandy.vercel.app/",
   },
   {
