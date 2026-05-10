@@ -156,12 +156,14 @@ export default function Navigation() {
             </div>
 
             <ThemeToggle className={heroMode ? "text-white/75 hover:text-white" : ""} />
-            <button
-              onClick={() => setConnectOpen(true)}
+            <a
+              href="https://calendly.com/lazarbukejlovic/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
             >
               Let's Connect
-            </button>
+            </a>
             <Link
               to="/resume"
               target="_blank"
@@ -231,15 +233,15 @@ export default function Navigation() {
                 })}
               </div>
 
-              <button
-                onClick={() => {
-                  setMobileOpen(false);
-                  setConnectOpen(true);
-                }}
+              <a
+                href="https://calendly.com/lazarbukejlovic/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+                onClick={() => setMobileOpen(false)}
               >
                 Let's Connect
-              </button>
+              </a>
               <Link
                 to="/resume"
                 target="_blank"
