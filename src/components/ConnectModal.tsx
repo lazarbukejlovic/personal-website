@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/dialog";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
-import { supabase } from "@/integrations/supabase/client";
 
 const TIME_SLOTS = [
   "09:00", "09:30", "10:00", "10:30",
@@ -43,6 +42,7 @@ export default function ConnectModal({ open, onOpenChange }: ConnectModalProps) 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const disabledDays = useMemo(
     () => ({
@@ -59,6 +59,7 @@ export default function ConnectModal({ open, onOpenChange }: ConnectModalProps) 
     setName("");
     setEmail("");
     setMessage("");
+    setSubmitError(null);
   };
 
   const handleClose = (value: boolean) => {
@@ -71,37 +72,41 @@ export default function ConnectModal({ open, onOpenChange }: ConnectModalProps) 
   const handleSubmit = async () => {
     if (!selectedDate || !selectedTime || !name.trim() || !email.trim()) return;
     setSubmitting(true);
+    setSubmitError(null);
 
     try {
-      const { error } = await supabase.from("scheduling_requests").insert({
-        name: name.trim(),
-        email: email.trim(),
-        message: message.trim(),
-        scheduled_date: format(selectedDate, "yyyy-MM-dd"),
-        scheduled_time: selectedTime,
-        timezone,
+      const response = await fetch("/api/send-contact-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          message: message.trim(),
+          preferredDate: format(selectedDate, "yyyy-MM-dd"),
+          preferredTime: selectedTime,
+          meetingReason: message.trim(),
+        }),
       });
 
-      if (error) throw error;
+      const data = await response.json().catch(() => ({}));
 
-      // Send confirmation email (best-effort — don't block UX on failure)
-      try {
-        await supabase.functions.invoke("send-booking-confirmation", {
-          body: {
-            name: name.trim(),
-            email: email.trim(),
-            scheduled_date: format(selectedDate, "EEEE, MMMM d, yyyy"),
-            scheduled_time: selectedTime,
-            timezone: timezone.replace("_", " "),
-          },
-        });
-      } catch (emailErr) {
-        console.warn("Booking confirmation email could not be sent:", emailErr);
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.error ||
+            "Something went wrong while sending your message. Please try again."
+        );
       }
 
       setStep("confirmed");
     } catch (err) {
-      console.error("Failed to submit scheduling request:", err);
+      console.error("Failed to submit contact request:", err);
+      setSubmitError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong while sending your message. Please try again."
+      );
     } finally {
       setSubmitting(false);
     }
@@ -237,7 +242,7 @@ export default function ConnectModal({ open, onOpenChange }: ConnectModalProps) 
 
             <div>
               <label className="mb-1 block text-xs font-medium text-muted-foreground">
-                Message
+                Message *
               </label>
               <textarea
                 value={message}
@@ -250,12 +255,18 @@ export default function ConnectModal({ open, onOpenChange }: ConnectModalProps) 
             </div>
 
             <button
-              disabled={!name.trim() || !email.trim() || submitting}
+              disabled={!name.trim() || !email.trim() || !message.trim() || submitting}
               onClick={handleSubmit}
               className="w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              {submitting ? "Scheduling…" : "Confirm Booking"}
+              {submitting ? "Sending..." : "Confirm Booking"}
             </button>
+
+            {submitError ? (
+              <p className="text-sm text-destructive">
+                {submitError}
+              </p>
+            ) : null}
           </div>
         )}
 
@@ -264,12 +275,10 @@ export default function ConnectModal({ open, onOpenChange }: ConnectModalProps) 
           <div className="flex flex-col items-center py-8 text-center">
             <CheckCircle2 size={48} className="text-primary" />
             <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">
-              You're booked
+              Message sent
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              A scheduling request has been submitted for{" "}
-              {selectedDate && format(selectedDate, "MMMM d, yyyy")} at{" "}
-              {selectedTime}. You'll receive a confirmation soon.
+              Message sent successfully. I'll get back to you shortly.
             </p>
             <button
               onClick={() => handleClose(false)}
