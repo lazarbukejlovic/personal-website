@@ -139,7 +139,7 @@ export default function HeroSection() {
               Lazar Bukejlovic
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-neutral-300 md:text-xl">
-              Building modern product applications with strong frontend execution and strong backend architecture.
+              Building full-stack product systems where frontend execution, backend architecture, and delivery reliability matter.
             </p>
 
             <div className="mt-8 h-px w-40 bg-gradient-to-r from-primary/90 to-transparent" />

@@ -1,16 +1,20 @@
 import { motion } from "framer-motion";
-import { Network, ShieldCheck } from "lucide-react";
+import { Code2, LayoutPanelLeft, Network, ShieldCheck, TestTubeDiagonal } from "lucide-react";
 import {
   SiExpress,
   SiGithub,
+  SiHtml5,
   SiJavascript,
+  SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
   SiPrisma,
   SiReact,
+  SiSupabase,
   SiStripe,
   SiTailwindcss,
   SiTypescript,
+  SiVercel,
   type IconType,
 } from "react-icons/si";
 
@@ -21,18 +25,28 @@ interface SkillItem {
 }
 
 const SKILLS: SkillItem[] = [
-  { name: "JavaScript", icon: SiJavascript, support: "Core language" },
+  { name: "React", icon: SiReact, support: "Frontend architecture" },
+  { name: "Next.js", icon: SiNextdotjs, support: "App routing and SSR" },
   { name: "TypeScript", icon: SiTypescript, support: "Type-safe systems" },
-  { name: "React", icon: SiReact, support: "UI architecture" },
+  { name: "JavaScript", icon: SiJavascript, support: "Core language" },
+  { name: "HTML", icon: SiHtml5, support: "Semantic UI structure" },
+  { name: "CSS", icon: Code2, support: "Styling systems" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, support: "Design execution" },
   { name: "Node.js", icon: SiNodedotjs, support: "Runtime and APIs" },
   { name: "Express", icon: SiExpress, support: "Service routing" },
+  { name: "REST APIs", icon: Network, support: "Interface contracts" },
+  { name: "API Integration", icon: Network, support: "Connected workflows" },
+  { name: "Authentication & Authorization", icon: ShieldCheck, support: "Secure user flows" },
   { name: "PostgreSQL", icon: SiPostgresql, support: "Relational data" },
   { name: "Prisma", icon: SiPrisma, support: "ORM workflows" },
-  { name: "REST APIs", icon: Network, support: "Interface design" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, support: "Design execution" },
-  { name: "Git / GitHub", icon: SiGithub, support: "Version control" },
-  { name: "Authentication", icon: ShieldCheck, support: "Secure user flows" },
-  { name: "Stripe", icon: SiStripe, support: "Payments and checkout" },
+  { name: "Supabase", icon: SiSupabase, support: "Backend services" },
+  { name: "Stripe API", icon: SiStripe, support: "Payments and billing" },
+  { name: "Git", icon: SiGithub, support: "Version control" },
+  { name: "GitHub", icon: SiGithub, support: "Collaboration and delivery" },
+  { name: "Vercel", icon: SiVercel, support: "Deployment" },
+  { name: "Responsive UI", icon: LayoutPanelLeft, support: "Multi-device UX" },
+  { name: "Loading/Error/Empty States", icon: LayoutPanelLeft, support: "Production readiness" },
+  { name: "QA/Debugging", icon: TestTubeDiagonal, support: "Release confidence" },
 ];
 
 export default function SkillsSection() {

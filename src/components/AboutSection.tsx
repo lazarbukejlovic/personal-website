@@ -14,17 +14,23 @@ export default function AboutSection() {
           <h2 className="font-heading text-sm font-medium tracking-widest uppercase text-primary">About</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
-              Full-Stack Engineer focused on architecting and delivering modern product applications grounded in
-              strong frontend execution and strong backend architecture.
+              I build full-stack product systems where frontend execution, backend architecture, and delivery
+              reliability matter.
             </p>
             <p>
-              I bring structured systems thinking to every layer of a product — from interface and interaction down to
-              data flow, integration, and delivery — shaped through work at TokenFlow and direct engagements with
-              private clients in finance-oriented and digital asset-related environments.
+              My work spans React, TypeScript, Node.js, REST APIs, authentication, dashboards, database-backed
+              features, payments, subscriptions, and responsive product interfaces. I have delivered 15+ client and
+              portfolio projects across fintech, digital assets, travel intelligence, operational tooling, booking
+              flows, and SaaS-style product experiences.
             </p>
             <p>
-              I operate best in ownership-driven environments where clean implementation, scalable architecture, and
-              end-to-end product flow are treated as one continuous craft.
+              I focus on turning product requirements into usable, production-ready software: structuring workflows,
+              building clean interfaces, connecting frontend behavior to backend logic, testing real user flows, and
+              preparing features for deployment.
+            </p>
+            <p>
+              Known for ownership-driven execution, product thinking, clean implementation, and building practical web
+              applications that feel polished, reliable, and ready for real users.
             </p>
           </div>
         </motion.div>

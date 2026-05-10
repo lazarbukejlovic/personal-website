@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import {
   ArrowLeft,
+  Code2,
   Cpu,
   Dumbbell,
   ExternalLink,
@@ -15,7 +16,9 @@ import {
 import {
   SiExpress,
   SiGithub,
+  SiHtml5,
   SiJavascript,
+  SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
   SiPrisma,
@@ -24,6 +27,7 @@ import {
   SiSupabase,
   SiTailwindcss,
   SiTypescript,
+  SiVercel,
   type IconType,
 } from "react-icons/si";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -100,99 +104,116 @@ const EXPERIENCE = [
     title: "Full-Stack Engineer",
     period: "February 2025 – Present",
     points: [
-      "Built and improved client-facing web applications using React, TypeScript, Node.js, REST APIs, and backend-connected product flows across multiple active project streams.",
-      "Developed dashboard interfaces, authenticated user flows, form-heavy product screens, responsive layouts, and API-driven data views with a focus on usability, reliability, and maintainable component structure.",
-      "Implemented and refined frontend-to-backend workflows, including data fetching, validation states, loading/error/empty states, route handling, and production-focused UI behavior across desktop and mobile.",
-      "Collaborated directly on product requirements, client feedback, implementation priorities, and delivery planning, translating business needs into clear technical tasks and shipped features.",
-      "Supported debugging, refactoring, deployment preparation, Git/GitHub workflows, and final product polish to improve stability, code quality, and delivery consistency across client projects.",
+      "At TokenFlow, I build and improve client-facing product applications with a focus on reliable, maintainable, backend-connected web experiences.",
+      "My work spans React, TypeScript, Node.js, REST APIs, dashboard interfaces, authenticated user flows, responsive layouts, and production-focused UI behavior.",
+      "I contribute across the full implementation cycle: translating product and client requirements into scoped technical tasks, building frontend flows, connecting UI behavior to backend logic, validating user journeys, debugging issues, refactoring components, and preparing features for delivery.",
+      "The work is fast-moving and ownership-driven, with an emphasis on clean execution, maintainability, and practical product value.",
+    ],
+  },
+  {
+    company: "ScaleRoad LLC",
+    title: "Full-Stack Software Engineer",
+    period: "December 2023 – February 2025",
+    points: [
+      "At ScaleRoad, I worked as a Full-Stack Software Engineer on product and operational web applications, focusing on frontend quality, backend-connected workflows, and reliable user-facing interfaces.",
+      "I built dashboard-driven features for records, payments, subscriptions, operational status, and internal business workflows using React, TypeScript, Node.js, REST APIs, and PostgreSQL.",
+      "My work included improving product UX, connecting frontend features with backend logic, handling validation and edge cases, building responsive layouts, and supporting release-ready implementation through QA, debugging, and polish.",
+      "This role strengthened my ability to work across the full product cycle while keeping the final experience clear, usable, and production-ready.",
     ],
   },
   {
     company: "Private Clients",
     title: "Freelance Full-Stack Engineer",
-    period: "December 2023 – February 2025",
+    period: "June 2023 – December 2023",
     points: [
-      "Delivered custom full-stack web applications for private clients in finance-oriented and digital asset-related environments, turning operational requirements into usable internal software tools.",
-      "Built dashboard-driven products for tracking records, client activity, payments, subscriptions, project status, and operational workflows using React, TypeScript, Node.js, APIs, and structured data models.",
-      "Replaced manual spreadsheet-based processes with structured web applications, improving visibility, consistency, and day-to-day usability for client teams.",
-      "Implemented core product features including authentication flows, protected pages, CRUD-style data management, responsive UI, payment-related flows, and deployment-ready frontend architecture.",
-      "Led hands-on delivery from requirements to launch: clarifying scope, planning features, building the interface, connecting backend logic, testing flows, fixing bugs, and preparing projects for real use.",
-      "Coordinated with clients and collaborators across design, content, product direction, and implementation priorities while maintaining ownership over engineering quality and final delivery.",
+      "Before ScaleRoad, I delivered custom full-stack applications for private clients in finance-oriented and digital asset-related environments.",
+      "These projects often involved turning manual spreadsheet workflows and scattered operational processes into structured internal tools with dashboards, data views, authentication flows, protected pages, CRUD-style management, payment-related flows, and responsive interfaces.",
+      "I handled projects from requirements to launch: clarifying scope, planning features, designing the user experience, building the UI, implementing backend and API logic, testing real user flows, improving usability, and preparing the final product for client handoff.",
+      "This period helped me build strong ownership, independence, and practical delivery habits across 15+ client and portfolio projects.",
     ],
   },
 ];
 
 const PROJECTS: ProjectItem[] = [
   {
+    name: "Personal Website / Portfolio",
+    description:
+      "Professional portfolio platform with visual resume, responsive project presentation, live project links, contact flow, and resume integration.",
+    href: "https://personal-website-tau-sandy.vercel.app/",
+  },
+  {
     name: "AtlasBrief",
     description:
-      "Travel-readiness intelligence platform with Supabase Auth, Stripe billing, saved briefs, watchlists, reports, public dossiers, and 30-90 day stay planning.",
+      "Flagship destination intelligence platform for travelers, remote workers, and long-stay planning with authentication, saved briefs, watchlists, traveler profiles, stay planning, billing, alerts, and reports.",
     href: "https://atlasbrief.vercel.app",
   },
   {
-    name: "GeoRisk",
+    name: "GeoRisk Platform",
     description:
-      "Geopolitical risk intelligence platform for monitoring conflict, market impact, and structured scenario awareness.",
+      "Geopolitical risk intelligence dashboard for conflict monitoring, market impact analysis, historical context, and simulated humanitarian relief tracking.",
     href: "https://georisk-platform.vercel.app/",
   },
   {
     name: "DevPath Hub",
     description:
-      "Developer platform centered on structured growth workflows, roadmap tracking, and execution-focused engineering tooling.",
+      "Developer growth and portfolio support platform for structured career workflows, project planning, portfolio positioning, and resource-driven learning.",
     href: "https://devpath-hub.vercel.app/",
   },
   {
     name: "EchoRoom",
     description:
-      "Social communication application built around conversation-first feeds, messaging, discovery, and live discussion rooms.",
+      "Social/developer conversation platform concept with feed interactions, messaging and discovery flows, live activity sections, and responsive product UI.",
     href: "https://echo-room-teal.vercel.app/",
   },
   {
     name: "ForgeDesk",
     description:
-      "A full-stack ecommerce workspace product with Stripe checkout, protected account flows, saved setups, order management, and role-protected admin tooling.",
+      "SaaS/workspace product with protected admin-style flows, product management UX, workspace structure, and Stripe checkout positioning.",
     href: "https://forgedesk-eosin.vercel.app/",
   },
   {
     name: "Foundry Studios",
     description:
-      "Booking and payments product shaped around scheduling logic, service flows, and polished customer-facing structure.",
+      "Booking and reservation platform centered on service scheduling, payment-oriented flows, and polished customer-facing booking UX.",
     href: "https://foundrystudios.vercel.app/",
-  },
-  {
-    name: "Professional Personal Website",
-    description:
-      "A polished personal engineering website with branded resume experience, strong project positioning, and integrated contact flow.",
-    href: "https://personal-website-tau-sandy.vercel.app/",
   },
   {
     name: "ClientFlow",
     description:
-      "Business operations platform for client management, project workflows, invoicing, and visibility across execution.",
+      "ClientFlow is a business operations dashboard for managing clients, projects, invoices, deadlines, and workflow visibility.",
     href: "https://client-flow-tawny-eight.vercel.app/",
   },
   {
     name: "RoomPulse",
     description:
-      "A workflow execution platform focused on task visibility, progress tracking, structured operations, and responsive product UX.",
+      "RoomPulse is a workflow and task management product built around boards, rooms, activity tracking, and operational visibility.",
     href: "https://room-pulse-seven.vercel.app/",
   },
 ];
 
 const SKILLS: SkillItem[] = [
   { name: "React", icon: SiReact, iconType: "brand" },
+  { name: "Next.js", icon: SiNextdotjs, iconType: "brand" },
   { name: "TypeScript", icon: SiTypescript, iconType: "brand" },
   { name: "JavaScript", icon: SiJavascript, iconType: "brand" },
+  { name: "HTML", icon: SiHtml5, iconType: "brand" },
+  { name: "CSS", icon: Code2, iconType: "lucide" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, iconType: "brand" },
   { name: "Node.js", icon: SiNodedotjs, iconType: "brand" },
   { name: "Express", icon: SiExpress, iconType: "brand" },
+  { name: "API Integration", icon: Network, iconType: "lucide" },
+  { name: "REST APIs", icon: Network, iconType: "lucide" },
+  { name: "Authentication & Authorization", icon: ShieldCheck, iconType: "lucide" },
   { name: "PostgreSQL", icon: SiPostgresql, iconType: "brand" },
   { name: "Prisma", icon: SiPrisma, iconType: "brand" },
   { name: "Supabase", icon: SiSupabase, iconType: "brand" },
   { name: "Stripe API", icon: SiStripe, iconType: "brand" },
-  { name: "REST APIs", icon: Network, iconType: "lucide" },
-  { name: "Authentication & Authorization", icon: ShieldCheck, iconType: "lucide" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, iconType: "brand" },
-  { name: "Git / GitHub", icon: SiGithub, iconType: "brand" },
+  { name: "Git", icon: SiGithub, iconType: "brand" },
+  { name: "GitHub", icon: SiGithub, iconType: "brand" },
+  { name: "Vercel", icon: SiVercel, iconType: "brand" },
+  { name: "Responsive UI", icon: Globe, iconType: "lucide" },
+  { name: "Loading/Error/Empty States", icon: ShieldCheck, iconType: "lucide" },
+  { name: "QA/Debugging", icon: Sparkles, iconType: "lucide" },
 ];
 
 const INTERESTS: InterestItem[] = [
@@ -242,7 +263,7 @@ export default function Resume() {
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <a
-              href={RESUME_PDF_URL}
+              href="/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden rounded-md border border-white/14 px-3 py-1.5 text-sm font-medium text-white/82 transition-colors hover:border-primary/40 hover:text-white sm:inline-flex"
@@ -250,7 +271,7 @@ export default function Resume() {
               Open PDF
             </a>
             <a
-              href={RESUME_PDF_URL}
+              href="/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
@@ -278,7 +299,7 @@ export default function Resume() {
                   />
                 </div>
                 <p className="mt-5 text-sm leading-relaxed text-white/70">
-                  Full-stack engineer focused on ownership-driven delivery, product systems thinking, and reliable execution across client-facing applications.
+                  I build full-stack product systems where frontend execution, backend architecture, and delivery reliability matter.
                 </p>
               </div>
 
@@ -358,7 +379,7 @@ export default function Resume() {
                     LAZAR BUKEJLOVIC
                   </h1>
                   <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-[15px]">
-                    Full-Stack Engineer focused on architecting and delivering modern product applications with strong frontend execution and strong backend architecture.
+                    I build full-stack product systems where frontend execution, backend architecture, and delivery reliability matter.
                   </p>
                 </div>
 
@@ -382,7 +403,7 @@ export default function Resume() {
             <section className="resume-block mt-8">
               <SectionLabel label="About" />
               <p className="mt-4 max-w-3xl text-[15px] leading-7 text-slate-700">
-                Full-Stack Engineer focused on architecting and delivering modern product applications with strong frontend execution and strong backend architecture. Experience spans ownership-driven delivery across client products, structured systems thinking, and reliable execution in finance-oriented and digital asset-related environments.
+                My work spans React, TypeScript, Node.js, REST APIs, authentication, dashboards, database-backed features, payments, subscriptions, and responsive product interfaces. I focus on turning product requirements into usable, production-ready software by structuring workflows, connecting frontend behavior to backend logic, validating real user flows, and preparing features for deployment.
               </p>
             </section>
 

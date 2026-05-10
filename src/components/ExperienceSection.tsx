@@ -19,23 +19,36 @@ const EXPERIENCE: ExperienceEntry[] = [
     imageAlt: "TokenFlow logo",
     logoHref: "https://www.atom.com/name/TokenFlow.ai",
     points: [
-      "Built and improved client-facing web applications using React, TypeScript, Node.js, REST APIs, and backend-connected product flows across multiple active project streams.",
-      "Developed dashboard interfaces, authenticated user flows, form-heavy product screens, responsive layouts, and API-driven data views with a focus on usability, reliability, and maintainable component structure.",
-      "Implemented and refined frontend-to-backend workflows, including data fetching, validation states, loading/error/empty states, route handling, and production-focused UI behavior across desktop and mobile.",
-      "Collaborated directly on product requirements, client feedback, implementation priorities, and delivery planning, translating business needs into clear technical tasks and shipped features.",
+      "At TokenFlow, I build and improve client-facing product applications with a focus on reliable, maintainable, backend-connected web experiences using React, TypeScript, Node.js, REST APIs, dashboard interfaces, authenticated user flows, responsive layouts, and production-focused UI behavior.",
+      "I contribute across the full implementation cycle: translating product and client requirements into scoped technical tasks, building frontend flows, connecting UI behavior to backend logic, validating user journeys, debugging issues, refactoring components, and preparing features for delivery.",
+      "The work is fast-moving and ownership-driven, with an emphasis on clean execution, maintainability, and practical product value.",
+    ],
+  },
+  {
+    company: "ScaleRoad LLC",
+    title: "Full-Stack Software Engineer",
+    period: "December 2023 – February 2025",
+    image: "/images/scaleroad.png",
+    imageAlt: "ScaleRoad LLC",
+    logoHref: "https://www.atom.com/name/ScaleRoad",
+    points: [
+      "At ScaleRoad, I worked as a Full-Stack Software Engineer on product and operational web applications, focusing on frontend quality, backend-connected workflows, and reliable user-facing interfaces.",
+      "I built dashboard-driven features for records, payments, subscriptions, operational status, and internal business workflows using React, TypeScript, Node.js, REST APIs, and PostgreSQL.",
+      "My work included improving product UX, connecting frontend features with backend logic, handling validation and edge cases, building responsive layouts, and supporting release-ready implementation through QA, debugging, and polish.",
+      "This role strengthened my ability to work across the full product cycle while keeping the final experience clear, usable, and production-ready.",
     ],
   },
   {
     company: "Private Clients",
     title: "Freelance Full-Stack Engineer",
-    period: "December 2023 – February 2025",
+    period: "June 2023 – December 2023",
     image: "/images/private-clients-badge.svg",
     imageAlt: "Private Clients – Freelance Full-Stack Engineer",
     points: [
-      "Delivered custom full-stack web applications for private clients in finance-oriented and digital asset-related environments, turning operational requirements into usable internal software tools.",
-      "Built dashboard-driven products for tracking records, client activity, payments, subscriptions, project status, and operational workflows using React, TypeScript, Node.js, APIs, and structured data models.",
-      "Replaced manual spreadsheet-based processes with structured web applications, improving visibility, consistency, and day-to-day usability for client teams.",
-      "Implemented core product features including authentication flows, protected pages, CRUD-style data management, responsive UI, payment-related flows, and deployment-ready frontend architecture.",
+      "Before ScaleRoad, I delivered custom full-stack applications for private clients in finance-oriented and digital asset-related environments.",
+      "These projects often involved turning manual spreadsheet workflows and scattered operational processes into structured internal tools with dashboards, data views, authentication flows, protected pages, CRUD-style management, payment-related flows, and responsive interfaces.",
+      "I handled projects from requirements to launch: clarifying scope, planning features, designing the user experience, building the UI, implementing backend and API logic, testing real user flows, improving usability, and preparing the final product for client handoff.",
+      "This period helped me build strong ownership, independence, and practical delivery habits across 15+ client and portfolio projects.",
     ],
   },
 ];
@@ -114,7 +127,7 @@ export default function ExperienceSection() {
                         <a
                           href={entry.logoHref}
                           target="_blank"
-                          rel="noreferrer noopener"
+                          rel="noopener noreferrer"
                           className="group/name inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
                         >
                           <h3 className="font-heading text-2xl font-semibold tracking-tight text-foreground transition-opacity group-hover/name:opacity-75">
