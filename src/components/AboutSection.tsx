@@ -14,19 +14,18 @@ export default function AboutSection() {
           <h2 className="font-heading text-sm font-medium tracking-widest uppercase text-primary">About</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
-              I build full-stack product systems where frontend execution, backend architecture, and delivery
-              reliability matter.
+              I build full-stack product systems that connect polished React/TypeScript interfaces with reliable
+              backend behavior.
             </p>
             <p>
-              My work spans React, TypeScript, Node.js, REST APIs, authentication, dashboards, database-backed
-              features, payments, subscriptions, and responsive product interfaces. I have delivered 15+ client and
-              portfolio projects across fintech, digital assets, travel intelligence, operational tooling, booking
-              flows, and SaaS-style product experiences.
+              My work spans Node.js, REST APIs, authentication, database-backed workflows, payments, dashboards, and
+              responsive product experiences across fintech, travel intelligence, operational tooling, booking flows,
+              and SaaS-style applications.
             </p>
             <p>
-              I focus on turning product requirements into usable, production-ready software: structuring workflows,
-              building clean interfaces, connecting frontend behavior to backend logic, testing real user flows, and
-              preparing features for deployment.
+              I focus on turning unclear product requirements into usable, production-ready software: structuring
+              workflows, building clean interfaces, connecting frontend behavior to backend logic, testing real user
+              flows, and preparing features for deployment.
             </p>
             <p>
               Known for ownership-driven execution, product thinking, clean implementation, and building practical web
