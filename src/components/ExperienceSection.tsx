@@ -19,9 +19,10 @@ const EXPERIENCE: ExperienceEntry[] = [
     imageAlt: "TokenFlow logo",
     logoHref: "https://www.atom.com/name/TokenFlow.ai",
     points: [
-      "At TokenFlow, I build and improve client-facing product applications with a focus on reliable, maintainable, backend-connected web experiences using React, TypeScript, Node.js, REST APIs, dashboard interfaces, authenticated user flows, responsive layouts, and production-focused UI behavior.",
-      "I contribute across the full implementation cycle: translating product and client requirements into scoped technical tasks, building frontend flows, connecting UI behavior to backend logic, validating user journeys, debugging issues, refactoring components, and preparing features for delivery.",
-      "The work is fast-moving and ownership-driven, with an emphasis on clean execution, maintainability, and practical product value.",
+      "Build and maintain client-facing React/TypeScript product applications across active product streams, owning work from handoff to deployment.",
+      "Work across dashboards, forms, authenticated flows, REST API-driven views, route handling, responsive layouts, loading/error/empty states, and production-focused UI behavior.",
+      "Debug frontend, API, authentication, and data-flow issues from active tickets and client feedback, communicate tradeoffs clearly, and ship scoped fixes without blocking delivery.",
+      "Implemented Jest coverage for critical authentication and payment-related flows, and used Docker-based local setup to improve development consistency across product work.",
     ],
   },
   {
@@ -32,10 +33,10 @@ const EXPERIENCE: ExperienceEntry[] = [
     imageAlt: "ScaleRoad LLC",
     logoHref: "https://www.atom.com/name/ScaleRoad",
     points: [
-      "At ScaleRoad, I worked as a Full-Stack Software Engineer on product and operational web applications, focusing on frontend quality, backend-connected workflows, and reliable user-facing interfaces.",
-      "I built dashboard-driven features for records, payments, subscriptions, operational status, and internal business workflows using React, TypeScript, Node.js, REST APIs, and PostgreSQL.",
-      "My work included improving product UX, connecting frontend features with backend logic, handling validation and edge cases, building responsive layouts, and supporting release-ready implementation through QA, debugging, and polish.",
-      "This role strengthened my ability to work across the full product cycle while keeping the final experience clear, usable, and production-ready.",
+      "Worked on product and operational web applications with a focus on frontend quality, backend-connected workflows, and reliable user-facing interfaces.",
+      "Implemented dashboard-driven features for records, payments, subscriptions, operational status, and internal business workflows using React, TypeScript, Node.js, REST APIs, and PostgreSQL.",
+      "Improved product UX by turning business processes into structured interfaces, connecting frontend behavior with backend logic, handling validation and edge cases, and supporting release-ready implementation through QA, debugging, and polish.",
+      "Owned delivery across scoping, UI build, backend integration, testing, bug fixing, production checks, and launch-ready implementation under shifting requirements.",
     ],
   },
   {
@@ -45,10 +46,10 @@ const EXPERIENCE: ExperienceEntry[] = [
     image: "/images/private-clients-badge.svg",
     imageAlt: "Private Clients – Freelance Full-Stack Engineer",
     points: [
-      "Before ScaleRoad, I delivered custom full-stack applications for private clients in finance-oriented and digital asset-related environments.",
-      "These projects often involved turning manual spreadsheet workflows and scattered operational processes into structured internal tools with dashboards, data views, authentication flows, protected pages, CRUD-style management, payment-related flows, and responsive interfaces.",
-      "I handled projects from requirements to launch: clarifying scope, planning features, designing the user experience, building the UI, implementing backend and API logic, testing real user flows, improving usability, and preparing the final product for client handoff.",
-      "This period helped me build strong ownership, independence, and practical delivery habits across 15+ client and portfolio projects.",
+      "Delivered custom full-stack web applications for private clients in finance, digital asset, and business operations environments.",
+      "Built authenticated dashboards, CRUD-style data views, payment and subscription-related flows, responsive interfaces, saved-state workflows, and admin-style product screens using React, TypeScript, Node.js, REST APIs, Supabase/PostgreSQL, and Stripe-related integrations.",
+      "Managed projects end to end, from scope clarification and UI structure to backend integration, debugging, QA, deployment, client feedback, and final handoff.",
+      "Developed the ability to move independently, understand business needs quickly, communicate tradeoffs clearly, and ship polished web applications without heavy supervision.",
     ],
   },
 ];
