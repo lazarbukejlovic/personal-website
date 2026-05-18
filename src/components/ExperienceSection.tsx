@@ -43,7 +43,7 @@ const EXPERIENCE: ExperienceEntry[] = [
     company: "Vertex Digital Studio",
     title: "Full-Stack Engineer",
     period: "January 2023 – December 2023",
-    image: "/images/private-clients-badge.svg",
+    image: "/images/vertex-digital-studio.png",
     imageAlt: "Vertex Digital Studio logo",
     points: [
       "Delivered custom full-stack applications for fintech, SaaS, digital asset, and e-commerce clients.",
