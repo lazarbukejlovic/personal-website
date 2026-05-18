@@ -102,34 +102,34 @@ const EXPERIENCE = [
   {
     company: "TokenFlow",
     title: "Full-Stack Engineer",
-    period: "February 2025 – Present",
+    period: "January 2025 – Present",
     points: [
-      "Build and maintain client-facing React/TypeScript product applications across active product streams, owning work from handoff to deployment.",
-      "Work across dashboards, forms, authenticated flows, REST API-driven views, route handling, responsive layouts, loading/error/empty states, and production-focused UI behavior.",
-      "Debug frontend, API, authentication, and data-flow issues from active tickets and client feedback, communicate tradeoffs clearly, and ship scoped fixes without blocking delivery.",
-      "Implemented Jest coverage for critical authentication and payment-related flows, and used Docker-based local setup to improve development consistency across product work.",
+      "React/TypeScript product engineering across multiple active workstreams, owning features from requirements through production deployment.",
+      "Built client-facing product surfaces including authenticated dashboards, API-driven views, form-heavy screens, responsive layouts, and loading/error/empty states.",
+      "Worked with Node.js/Express, Supabase/PostgreSQL, auth/session logic, Stripe billing flows, Docker-based environments, and Jest-tested production features.",
+      "Debugged frontend, API, authentication, and data-flow issues from active tickets and client feedback, communicating tradeoffs clearly and shipping scoped fixes without blocking delivery.",
     ],
   },
   {
     company: "ScaleRoad LLC",
     title: "Full-Stack Software Engineer",
-    period: "December 2023 – February 2025",
+    period: "December 2023 – January 2025",
     points: [
-      "Worked on product and operational web applications with a focus on frontend quality, backend-connected workflows, and reliable user-facing interfaces.",
-      "Implemented dashboard-driven features for records, payments, subscriptions, operational status, and internal business workflows using React, TypeScript, Node.js, REST APIs, and PostgreSQL.",
-      "Improved product UX by turning business processes into structured interfaces, connecting frontend behavior with backend logic, handling validation and edge cases, and supporting release-ready implementation through QA, debugging, and polish.",
-      "Owned delivery across scoping, UI build, backend integration, testing, bug fixing, production checks, and launch-ready implementation under shifting requirements.",
+      "Built operational dashboards and internal tooling for records, payments, subscriptions, and status tracking using React, TypeScript, Node.js, REST APIs, and PostgreSQL.",
+      "Implemented strict frontend-backend API contracts and defensive data-fetching patterns to improve reliability across latency-sensitive product surfaces.",
+      "Optimized dashboard state management, lazy-loading, and responsive layouts, improving page load performance and reducing user-facing friction.",
+      "Owned full delivery lifecycle across assigned features, including scoping, UI implementation, backend integration, QA, bug fixes, and production launch.",
     ],
   },
   {
-    company: "Private Clients",
-    title: "Freelance Full-Stack Engineer",
-    period: "June 2023 – December 2023",
+    company: "Vertex Digital Studio",
+    title: "Full-Stack Engineer",
+    period: "January 2023 – December 2023",
     points: [
-      "Delivered custom full-stack web applications for private clients in finance, digital asset, and business operations environments.",
-      "Built authenticated dashboards, CRUD-style data views, payment and subscription-related flows, responsive interfaces, saved-state workflows, and admin-style product screens using React, TypeScript, Node.js, REST APIs, Supabase/PostgreSQL, and Stripe-related integrations.",
-      "Managed projects end to end, from scope clarification and UI structure to backend integration, debugging, QA, deployment, client feedback, and final handoff.",
-      "Developed the ability to move independently, understand business needs quickly, communicate tradeoffs clearly, and ship polished web applications without heavy supervision.",
+      "Delivered custom full-stack applications for fintech, SaaS, digital asset, and e-commerce clients.",
+      "Built authenticated dashboards, CRUD views, REST API workflows, payment flows, reusable React/TypeScript UI patterns, and responsive product interfaces.",
+      "Architected secure auth flows, relational data models, and API-connected workflows across client projects.",
+      "Managed client work end to end — from scope planning and implementation to testing, deployment, documentation, and handoff.",
     ],
   },
 ];
@@ -138,31 +138,31 @@ const PROJECTS: ProjectItem[] = [
   {
     name: "Personal Website / Portfolio",
     description:
-      "Professional portfolio platform with visual resume, responsive project presentation, live project links, contact flow, and resume integration.",
+      "Professional portfolio and visual resume platform presenting my full-stack engineering profile, selected projects, live demos, contact flow, Calendly booking, and resume integration.",
     href: "https://personal-website-tau-sandy.vercel.app/",
   },
   {
     name: "AtlasBrief",
     description:
-      "Flagship destination intelligence platform for travelers, remote workers, and long-stay planning with authentication, saved briefs, watchlists, traveler profiles, stay planning, billing, alerts, and reports.",
+      "Production-ready travel intelligence SaaS built with React, TypeScript, Supabase Auth, RLS-backed data persistence, Stripe billing, plan-based limits, watchlists, stay planner, reports, alerts, comparison tools, protected dashboard surfaces, and Vercel deployment.",
     href: "https://atlasbrief.vercel.app",
   },
   {
     name: "GeoRisk Platform",
     description:
-      "Geopolitical risk intelligence dashboard for conflict monitoring, market impact analysis, historical context, and simulated humanitarian relief tracking.",
+      "Geopolitical risk intelligence dashboard with conflict monitoring, market-impact sections, historical context views, modular risk content, and decision-focused reporting flows across responsive layouts.",
     href: "https://georisk-platform.vercel.app/",
   },
   {
     name: "DevPath Hub",
     description:
-      "Developer growth and portfolio support platform for structured career workflows, project planning, portfolio positioning, and resource-driven learning.",
+      "Developer growth platform for structured portfolio workflows, project planning, guided career preparation, reusable UI patterns, and clean product journeys.",
     href: "https://devpath-hub.vercel.app/",
   },
   {
     name: "EchoRoom",
     description:
-      "Social/developer conversation platform concept with feed interactions, messaging and discovery flows, live activity sections, and responsive product UI.",
+      "Real-time social/developer conversation platform with feed interactions, messaging, discovery flows, live activity panels, defensive empty states, and responsive navigation.",
     href: "https://echo-room-teal.vercel.app/",
   },
   {
