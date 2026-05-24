@@ -38,13 +38,6 @@ It moves beyond a standard portfolio and acts more like a personal product layer
 - it presents contact and scheduling in a real application flow
 - it keeps the design serious, simple, and product-oriented
 
-## Selected Work Linked From This Project
-
-- **EchoRoom** — social communication app where posts become conversations
-- **Foundry Studios** — booking and payments product
-- **ClientFlow** — client and project operations platform
-- **RoomPulse** — workflow execution platform
-
 ## Tech Stack
 
 - React
