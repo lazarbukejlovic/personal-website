@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface ExperienceEntry {
   company: string;
@@ -54,114 +55,207 @@ const EXPERIENCE: ExperienceEntry[] = [
   },
 ];
 
-function LogoBox({
-  image,
-  imageAlt,
-  href,
-}: {
-  image: string;
-  imageAlt: string;
-  href?: string;
-}) {
-  const inner = (
-    <div className="flex h-28 w-full items-center justify-center rounded-xl border border-border/60 bg-background/70 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_6px_22px_rgba(0,0,0,0.28)] ring-1 ring-inset ring-white/[0.04]">
-      <img
-        src={image}
-        alt={imageAlt}
-        loading="lazy"
-        className="max-h-[80px] max-w-full h-auto w-auto object-contain"
-      />
-    </div>
+function TimelineDot() {
+  return (
+    <div
+      className="h-3.5 w-3.5 rounded-full"
+      style={{
+        background: "rgba(255,255,255,0.85)",
+        border: "2.5px solid #080c16",
+        boxShadow: "0 0 0 2.5px rgba(255,255,255,0.22), 0 0 14px rgba(100,195,240,0.55)",
+      }}
+    />
   );
+}
 
-  if (href) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`${imageAlt} – visit company reference`}
-        className="block transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-      >
-        {inner}
-      </a>
-    );
-  }
+function ExperienceCard({ entry, index }: { entry: ExperienceEntry; index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const spotRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
 
-  return <>{inner}</>;
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reduceMotion || !cardRef.current) return;
+    const r = cardRef.current.getBoundingClientRect();
+    if (spotRef.current) {
+      spotRef.current.style.background = `radial-gradient(280px circle at ${e.clientX - r.left}px ${e.clientY - r.top}px, rgba(100,195,240,0.065), transparent 65%)`;
+    }
+    cardRef.current.style.borderColor = "rgba(255,255,255,0.16)";
+  };
+
+  const onMouseLeave = () => {
+    if (!cardRef.current) return;
+    cardRef.current.style.borderColor = "rgba(255,255,255,0.07)";
+    if (spotRef.current) spotRef.current.style.background = "";
+  };
+
+  return (
+    <motion.article
+      ref={cardRef}
+      initial={{ opacity: 0, y: 18, x: index % 2 === 0 ? -16 : 16 }}
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.65, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      className="relative overflow-hidden rounded-2xl p-5 sm:p-6 transition-colors duration-300"
+      style={{
+        background: "rgba(10,10,10,0.78)",
+        border: "1px solid rgba(255,255,255,0.07)",
+        backdropFilter: "blur(12px)",
+      }}
+    >
+      {/* Inner cursor spotlight */}
+      <div ref={spotRef} className="pointer-events-none absolute inset-0 rounded-2xl" />
+
+      <div className="relative">
+        {/* Header row: logo + company + title + period */}
+        <div className="flex items-start gap-3">
+          {/* Compact logo */}
+          <div
+            className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl p-1.5"
+            style={{
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(120,180,230,0.12)",
+            }}
+          >
+            {entry.logoHref ? (
+              <a href={entry.logoHref} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
+                <img
+                  src={entry.image}
+                  alt={entry.imageAlt}
+                  loading="lazy"
+                  className="max-h-9 max-w-[36px] object-contain"
+                />
+              </a>
+            ) : (
+              <img
+                src={entry.image}
+                alt={entry.imageAlt}
+                loading="lazy"
+                className="max-h-9 max-w-[36px] object-contain"
+              />
+            )}
+          </div>
+
+          {/* Company name + role + period */}
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1">
+              <div>
+                {entry.logoHref ? (
+                  <a
+                    href={entry.logoHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-opacity hover:opacity-75"
+                  >
+                    <h3
+                      className="font-heading text-base font-bold tracking-tight text-foreground sm:text-lg"
+                      style={{ letterSpacing: "-0.01em" }}
+                    >
+                      {entry.company}
+                    </h3>
+                  </a>
+                ) : (
+                  <h3
+                    className="font-heading text-base font-bold tracking-tight text-foreground sm:text-lg"
+                    style={{ letterSpacing: "-0.01em" }}
+                  >
+                    {entry.company}
+                  </h3>
+                )}
+                <p className="mt-0.5 text-xs font-semibold" style={{ color: "rgba(255,255,255,0.72)" }}>
+                  {entry.title}
+                </p>
+              </div>
+              <span className="whitespace-nowrap text-[10px] font-medium uppercase tracking-widest text-muted-foreground/55">
+                {entry.period}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bullet points */}
+        <ul className="mt-4 space-y-2.5">
+          {entry.points.map((point, j) => (
+            <li key={j} className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
+              <span
+                className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                style={{ background: "rgba(255,255,255,0.50)" }}
+              />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.article>
+  );
 }
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="scroll-mt-20 py-20">
+    <section id="experience" className="scroll-mt-20 py-28">
       <div className="section-container">
-        <p className="font-heading text-sm font-medium tracking-widest uppercase text-primary">
-          Experience
-        </p>
-        <h2 className="mt-4 max-w-2xl font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Building and shipping product systems with structured, ownership-first execution.
-        </h2>
 
-        <div className="mt-10 space-y-7">
-          {EXPERIENCE.map((entry, i) => (
-            <motion.article
-              key={entry.company}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative overflow-hidden rounded-2xl border border-border/70 bg-card/70 p-5 shadow-[0_16px_45px_rgba(0,0,0,0.2)] backdrop-blur-sm sm:p-7"
-            >
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(244,162,79,0.12),transparent_48%)]" />
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className="font-heading text-[11px] font-semibold tracking-[0.32em] uppercase text-primary">
+            Experience
+          </p>
+          <h2
+            className="mt-4 font-heading font-light text-foreground"
+            style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.03em", lineHeight: 1.15 }}
+          >
+            My{" "}
+            <strong className="font-bold">Experience</strong>
+          </h2>
+          <div
+            className="mt-5 h-px w-24"
+            style={{ background: "linear-gradient(to right, hsl(var(--primary)/0.7), transparent)" }}
+          />
+        </motion.div>
 
-              <div className="relative flex flex-col gap-6 md:flex-row md:items-start">
-                {/* Logo / image area */}
-                <div className="w-full flex-shrink-0 md:w-44">
-                  <LogoBox image={entry.image} imageAlt={entry.imageAlt} href={entry.logoHref} />
-                </div>
+        {/* Timeline */}
+        <div className="relative mt-14">
+          {/* Vertical center line — desktop only */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-0 bottom-0 hidden w-px -translate-x-1/2 md:block"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent 0%, rgba(100,195,240,0.18) 8%, rgba(100,195,240,0.18) 92%, transparent 100%)",
+            }}
+          />
 
-                {/* Content */}
-                <div className="min-w-0 flex-1">
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
-                    <div>
-                      {entry.logoHref ? (
-                        <a
-                          href={entry.logoHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group/name inline-block focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-                        >
-                          <h3 className="font-heading text-2xl font-semibold tracking-tight text-foreground transition-opacity group-hover/name:opacity-75">
-                            {entry.company}
-                          </h3>
-                        </a>
-                      ) : (
-                        <h3 className="font-heading text-2xl font-semibold tracking-tight text-foreground">
-                          {entry.company}
-                        </h3>
-                      )}
-                      <p className="mt-1 text-sm font-medium text-primary">{entry.title}</p>
+          <div className="space-y-6">
+            {EXPERIENCE.map((entry, i) => {
+              const isLeft = i % 2 === 0;
+              return (
+                <div key={entry.company}>
+                  {/* Desktop: alternating left / right with center dot */}
+                  <div className="hidden md:grid md:grid-cols-[1fr_56px_1fr] md:items-start">
+                    <div className="pr-6">
+                      {isLeft && <ExperienceCard entry={entry} index={i} />}
                     </div>
-                    <p className="whitespace-nowrap text-xs font-medium uppercase tracking-wide text-muted-foreground sm:pt-1">
-                      {entry.period}
-                    </p>
+                    <div className="relative z-10 flex justify-center pt-[26px]">
+                      <TimelineDot />
+                    </div>
+                    <div className="pl-6">
+                      {!isLeft && <ExperienceCard entry={entry} index={i} />}
+                    </div>
                   </div>
 
-                  <ul className="mt-5 space-y-3">
-                    {entry.points.map((point, j) => (
-                      <li
-                        key={j}
-                        className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"
-                      >
-                        <span className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/80" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Mobile: full-width stack */}
+                  <div className="md:hidden">
+                    <ExperienceCard entry={entry} index={i} />
+                  </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

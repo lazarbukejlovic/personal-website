@@ -1,100 +1,193 @@
-import { motion } from "framer-motion";
-import { Code2, LayoutPanelLeft, Network, ShieldCheck, TestTubeDiagonal } from "lucide-react";
-import {
-  SiExpress,
-  SiGithub,
-  SiHtml5,
-  SiJavascript,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiPrisma,
-  SiReact,
-  SiSupabase,
-  SiStripe,
-  SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-  type IconType,
-} from "react-icons/si";
+import { useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { Network, CreditCard, Cloud } from "lucide-react";
+import { SiReact, type IconType } from "react-icons/si";
+import type { LucideIcon } from "lucide-react";
 
-interface SkillItem {
-  name: string;
-  icon: IconType;
-  support?: string;
+type CategoryIcon = LucideIcon | IconType;
+
+interface SkillCategory {
+  label: string;
+  description: string;
+  icon: CategoryIcon;
+  iconType: "lucide" | "brand";
+  skills: string[];
 }
 
-const SKILLS: SkillItem[] = [
-  { name: "React", icon: SiReact, support: "Frontend architecture" },
-  { name: "Next.js", icon: SiNextdotjs, support: "App routing and SSR" },
-  { name: "TypeScript", icon: SiTypescript, support: "Type-safe systems" },
-  { name: "JavaScript", icon: SiJavascript, support: "Core language" },
-  { name: "HTML", icon: SiHtml5, support: "Semantic UI structure" },
-  { name: "CSS", icon: Code2, support: "Styling systems" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, support: "Design execution" },
-  { name: "Node.js", icon: SiNodedotjs, support: "Runtime and APIs" },
-  { name: "Express", icon: SiExpress, support: "Service routing" },
-  { name: "REST APIs", icon: Network, support: "Interface contracts" },
-  { name: "API Integration", icon: Network, support: "Connected workflows" },
-  { name: "Authentication & Authorization", icon: ShieldCheck, support: "Secure user flows" },
-  { name: "PostgreSQL", icon: SiPostgresql, support: "Relational data" },
-  { name: "Prisma", icon: SiPrisma, support: "ORM workflows" },
-  { name: "Supabase", icon: SiSupabase, support: "Backend services" },
-  { name: "Stripe API", icon: SiStripe, support: "Payments and billing" },
-  { name: "Git", icon: SiGithub, support: "Version control" },
-  { name: "GitHub", icon: SiGithub, support: "Collaboration and delivery" },
-  { name: "Vercel", icon: SiVercel, support: "Deployment" },
-  { name: "Responsive UI", icon: LayoutPanelLeft, support: "Multi-device UX" },
-  { name: "Loading/Error/Empty States", icon: LayoutPanelLeft, support: "Production readiness" },
-  { name: "QA/Debugging", icon: TestTubeDiagonal, support: "Release confidence" },
+const CATEGORIES: SkillCategory[] = [
+  {
+    label: "Frontend & UI",
+    description: "Interfaces, design systems, and user experience",
+    icon: SiReact,
+    iconType: "brand",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "UI/UX Design", "Zustand", "TanStack Query", "Framer Motion"],
+  },
+  {
+    label: "Backend & Data",
+    description: "APIs, services, databases, and server logic",
+    icon: Network,
+    iconType: "lucide",
+    skills: ["Node.js", "Express", "REST APIs", "PostgreSQL", "Supabase", "Prisma", "MongoDB", "Database Schema Design"],
+  },
+  {
+    label: "Payments & Auth",
+    description: "Billing flows, identity, and access control",
+    icon: CreditCard,
+    iconType: "lucide",
+    skills: ["Stripe API", "OAuth 2.0", "Auth0", "JWT", "Session Flows", "Protected Routes", "Subscription Flows"],
+  },
+  {
+    label: "Cloud & Quality",
+    description: "Deployment, testing, and production readiness",
+    icon: Cloud,
+    iconType: "lucide",
+    skills: ["Vercel", "GitHub Actions", "Docker", "Jest", "Cypress", "Vitest", "QA / Debugging", "AI-assisted Development"],
+  },
 ];
+
+function CategoryCard({ cat, index }: { cat: SkillCategory; index: number }) {
+  const cardRef      = useRef<HTMLDivElement>(null);
+  const spotRef      = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+  const Icon         = cat.icon as React.ComponentType<{ className?: string }>;
+
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (reduceMotion || !cardRef.current) return;
+    const r = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    if (spotRef.current) {
+      spotRef.current.style.background = `radial-gradient(280px circle at ${x}px ${y}px, rgba(255,255,255,0.055), transparent 65%)`;
+    }
+    cardRef.current.style.borderColor = "rgba(255,255,255,0.18)";
+  };
+  const onMouseLeave = () => {
+    if (!cardRef.current) return;
+    cardRef.current.style.borderColor = "";
+    if (spotRef.current) spotRef.current.style.background = "";
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      className="relative overflow-hidden rounded-2xl p-6 transition-colors duration-300"
+      style={{
+        background: "rgba(10,10,10,0.75)",
+        border: "1px solid rgba(255,255,255,0.07)",
+        backdropFilter: "blur(14px)",
+      }}
+    >
+      {/* Inner spotlight */}
+      <div ref={spotRef} className="pointer-events-none absolute inset-0 rounded-2xl" />
+
+      <div className="relative">
+        {/* Header row */}
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div
+              className="flex h-10 w-10 items-center justify-center rounded-xl"
+              style={{
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                color: "rgba(255,255,255,0.75)",
+              }}
+            >
+              <Icon className="h-4 w-4" />
+            </div>
+            <div>
+              <h3 className="font-heading text-base font-bold tracking-tight text-foreground sm:text-lg">
+                {cat.label}
+              </h3>
+              <p className="mt-0.5 text-xs text-muted-foreground">{cat.description}</p>
+            </div>
+          </div>
+          <span
+            className="font-mono text-sm font-semibold tabular-nums"
+            style={{ color: "rgba(255,255,255,0.22)" }}
+          >
+            {String(cat.skills.length).padStart(2, "0")}
+          </span>
+        </div>
+
+        {/* Skill pill tags */}
+        <div className="mt-5 flex flex-wrap gap-2">
+          {cat.skills.map((skill) => (
+            <span
+              key={skill}
+              className="rounded-lg px-3 py-1.5 text-xs font-medium transition-colors duration-200"
+              style={{
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.09)",
+                color: "rgba(255,255,255,0.60)",
+              }}
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="scroll-mt-20 py-20">
+    <section id="skills" className="scroll-mt-20 py-28">
       <div className="section-container">
-        <p className="font-heading text-xs font-semibold tracking-[0.24em] uppercase text-primary">
-          Skills
-        </p>
-        <div className="mt-3 max-w-3xl">
-          <h2 className="font-heading text-2xl leading-tight font-semibold tracking-tight text-foreground sm:text-3xl">
-            Product-focused engineering across frontend, backend, APIs, and production-ready user flows.
+
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 22, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center"
+        >
+          <div
+            className="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5"
+            style={{
+              fontSize: 11, fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase",
+              border: "1px solid rgba(255,255,255,0.14)",
+              background: "rgba(255,255,255,0.04)",
+              color: "rgba(255,255,255,0.60)",
+            }}
+          >
+            <span
+              className="rounded-full"
+              style={{ width: 5, height: 5, background: "rgba(255,255,255,0.65)", flexShrink: 0 }}
+            />
+            Tech Stack
+          </div>
+
+          <h2
+            className="font-heading font-light text-foreground"
+            style={{ fontSize: "clamp(32px, 5.5vw, 64px)", letterSpacing: "-0.03em", lineHeight: 1.1 }}
+          >
+            Skills &{" "}
+            <strong className="font-bold">Expertise</strong>
           </h2>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            A selected toolkit used to design, ship, and scale real user-facing products with clean architecture.
+
+          <p className="mt-5 text-base text-muted-foreground">
+            The tools and technologies I use to build production-ready products.
           </p>
-        </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SKILLS.map((skill, i) => {
-            const Icon = skill.icon;
+          <div
+            className="mx-auto mt-8 h-px w-24"
+            style={{ background: "linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent)" }}
+          />
+        </motion.div>
 
-            return (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl border border-border/70 bg-card/70 p-5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-[0_14px_40px_-24px_hsl(var(--foreground)/0.52)]"
-            >
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_12%,hsl(var(--primary)/0.16),transparent_54%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <div className="relative flex h-full items-start gap-4">
-                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary shadow-[inset_0_1px_0_hsl(var(--primary)/0.25)]">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-heading text-base font-semibold tracking-tight text-foreground sm:text-lg">
-                    {skill.name}
-                  </h3>
-                  {skill.support ? (
-                    <p className="mt-1 text-sm text-muted-foreground">{skill.support}</p>
-                  ) : null}
-                </div>
-              </div>
-            </motion.div>
-            );
-          })}
+        {/* Category grid */}
+        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+          {CATEGORIES.map((cat, i) => (
+            <CategoryCard key={cat.label} cat={cat} index={i} />
+          ))}
         </div>
       </div>
     </section>

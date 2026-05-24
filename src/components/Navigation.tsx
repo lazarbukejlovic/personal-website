@@ -6,19 +6,14 @@ import ThemeToggle from "./ThemeToggle";
 import ConnectModal from "./ConnectModal";
 
 const NAV_LINKS = [
-  { label: "About", href: "#about" },
+  { label: "About",      href: "#about" },
   { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#work" },
-  { label: "Interests", href: "#interests" },
+  { label: "Skills",     href: "#skills" },
+  { label: "Work",       href: "#work" },
+  { label: "Interests",  href: "#interests" },
 ];
 
-type SocialLink = {
-  label: string;
-  href: string;
-  icon: ReactNode;
-  external?: boolean;
-};
+type SocialLink = { label: string; href: string; icon: ReactNode; external?: boolean };
 
 function GitHubIcon() {
   return (
@@ -46,53 +41,30 @@ function EmailIcon() {
 }
 
 const SOCIAL_LINKS: SocialLink[] = [
-  {
-    label: "GitHub",
-    href: "https://github.com/lazarbukejlovic",
-    icon: <GitHubIcon />,
-    external: true,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/lazar-bukejlovic",
-    icon: <LinkedInIcon />,
-    external: true,
-  },
-  {
-    label: "Email",
-    href: "mailto:lazarbukejlovic@icloud.com",
-    icon: <EmailIcon />,
-  },
+  { label: "GitHub",   href: "https://github.com/lazarbukejlovic",             icon: <GitHubIcon />,   external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/lazar-bukejlovic",   icon: <LinkedInIcon />, external: true },
+  { label: "Email",    href: "mailto:lazarbukejlovic@icloud.com",              icon: <EmailIcon /> },
 ];
 
 export default function Navigation() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen]   = useState(false);
   const [connectOpen, setConnectOpen] = useState(false);
-  const [isTop, setIsTop] = useState(true);
+  const [isTop, setIsTop]             = useState(true);
   const location = useLocation();
   const isHome = location.pathname === "/";
 
   useEffect(() => {
-    if (!isHome) {
-      setIsTop(false);
-      return;
-    }
-
+    if (!isHome) { setIsTop(false); return; }
     const onScroll = () => setIsTop(window.scrollY < 20);
     onScroll();
-
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    if (!isHome) {
-      window.location.href = "/" + href;
-      return;
-    }
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (!isHome) { window.location.href = "/" + href; return; }
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
 
   const heroMode = isHome && isTop;
@@ -100,88 +72,88 @@ export default function Navigation() {
   return (
     <>
       <header
-        className={`no-print fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-colors ${
+        className={`no-print fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-colors duration-300 ${
           heroMode
-            ? "border-white/10 bg-neutral-950/70"
-            : "border-border/60 bg-background/80"
+            ? "border-white/8 bg-[rgba(6,8,16,0.72)]"
+            : "border-[rgba(120,180,230,0.12)] bg-[rgba(6,8,16,0.82)]"
         }`}
       >
         <div className="section-container flex h-16 items-center justify-between">
+          {/* Logo */}
           <Link
             to="/"
-            className={`font-heading text-lg font-semibold tracking-tight ${
-              heroMode ? "text-white" : "text-foreground"
-            }`}
+            className="font-heading text-lg font-bold tracking-tight text-white transition-opacity hover:opacity-80"
           >
             LB
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-7 md:flex">
             {NAV_LINKS.map((link) => (
               <button
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className={`text-sm transition-colors ${
-                  heroMode
-                    ? "text-white/70 hover:text-white"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
+                className="text-sm font-medium text-white/55 transition-colors hover:text-white"
               >
                 {link.label}
               </button>
             ))}
           </nav>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2">
+            {/* Social icons */}
             <div className="hidden items-center gap-1 sm:flex">
-              {SOCIAL_LINKS.map((link) => {
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                    aria-label={link.label}
-                    className={`inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors ${
-                      heroMode
-                        ? "border-white/20 text-white/80 hover:border-primary/70 hover:text-primary"
-                        : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
-                    }`}
-                  >
-                    {link.icon}
-                  </a>
-                );
-              })}
+              {SOCIAL_LINKS.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  aria-label={link.label}
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-md border transition-all duration-200 hover:scale-105"
+                  style={{
+                    borderColor: "rgba(120,180,230,0.18)",
+                    color: "rgba(255,255,255,0.55)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(100,195,240,0.4)";
+                    e.currentTarget.style.color = "rgba(100,195,240,0.9)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(120,180,230,0.18)";
+                    e.currentTarget.style.color = "rgba(255,255,255,0.55)";
+                  }}
+                >
+                  {link.icon}
+                </a>
+              ))}
             </div>
 
-            <ThemeToggle className={heroMode ? "text-white/75 hover:text-white" : ""} />
+            <ThemeToggle className="text-white/55 hover:text-white" />
+
             <a
               href="https://calendly.com/lazarbukejlovic/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
+              className="hidden rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:opacity-90 sm:inline-flex"
+              style={{ background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}
             >
               Let's Connect
             </a>
-            <Link
-              to="/resume"
+
+            <a
+              href="/Resume.pdf"
               target="_blank"
-              rel="noreferrer noopener"
-              className={`hidden rounded-md border px-4 py-2 text-sm font-medium transition-colors sm:inline-flex ${
-                heroMode
-                  ? "border-white/20 text-white hover:bg-white/10"
-                  : "border-border text-foreground hover:bg-secondary"
-              }`}
+              rel="noopener noreferrer"
+              className="hidden rounded-lg border px-4 py-2 text-sm font-medium text-white/80 transition-all duration-200 hover:text-white sm:inline-flex"
+              style={{ borderColor: "rgba(120,180,230,0.22)", background: "rgba(120,180,230,0.06)" }}
             >
               View Resume
-            </Link>
+            </a>
 
             {/* Mobile toggle */}
             <button
-              className={`ml-1 inline-flex items-center justify-center rounded-md p-2 md:hidden ${
-                heroMode ? "text-white" : "text-foreground"
-              }`}
+              className="ml-1 inline-flex items-center justify-center rounded-md p-2 text-white/70 hover:text-white md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -193,64 +165,57 @@ export default function Navigation() {
         {/* Mobile menu */}
         {mobileOpen && (
           <div
-            className={`border-t px-6 pb-6 pt-4 md:hidden ${
-              heroMode ? "border-white/10 bg-neutral-950/95" : "border-border bg-background"
-            }`}
+            className="border-t px-6 pb-6 pt-4 md:hidden"
+            style={{ borderColor: "rgba(120,180,230,0.1)", background: "rgba(6,8,16,0.96)" }}
           >
             <nav className="flex flex-col gap-4">
               {NAV_LINKS.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className={`text-left text-sm transition-colors ${
-                    heroMode
-                      ? "text-white/75 hover:text-white"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className="text-left text-sm font-medium text-white/60 transition-colors hover:text-white"
                 >
                   {link.label}
                 </button>
               ))}
 
               <div className="flex items-center gap-2 pb-1">
-                {SOCIAL_LINKS.map((link) => {
-                  return (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target={link.external ? "_blank" : undefined}
-                      rel={link.external ? "noopener noreferrer" : undefined}
-                      aria-label={link.label}
-                      className={`inline-flex h-9 w-9 items-center justify-center rounded-md border transition-colors ${
-                        heroMode
-                          ? "border-white/20 text-white/80 hover:border-primary/70 hover:text-primary"
-                          : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
-                      }`}
-                    >
-                      {link.icon}
-                    </a>
-                  );
-                })}
+                {SOCIAL_LINKS.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                    aria-label={link.label}
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-md border text-white/55 transition-colors hover:text-white"
+                    style={{ borderColor: "rgba(120,180,230,0.18)" }}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
               </div>
 
               <a
                 href="https://calendly.com/lazarbukejlovic/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+                className="rounded-lg px-4 py-2.5 text-sm font-semibold text-center"
+                style={{ background: "hsl(var(--primary))", color: "hsl(var(--primary-foreground))" }}
                 onClick={() => setMobileOpen(false)}
               >
                 Let's Connect
               </a>
-              <Link
-                to="/resume"
+
+              <a
+                href="/Resume.pdf"
                 target="_blank"
-                rel="noreferrer noopener"
+                rel="noopener noreferrer"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-md border border-border px-4 py-2 text-center text-sm font-medium text-foreground"
+                className="rounded-lg border px-4 py-2.5 text-center text-sm font-medium text-white/80"
+                style={{ borderColor: "rgba(120,180,230,0.22)" }}
               >
                 View Resume
-              </Link>
+              </a>
             </nav>
           </div>
         )}
