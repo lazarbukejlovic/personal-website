@@ -2,7 +2,7 @@
 
 Premium personal engineering website built to present my work, experience, resume, and contact flow in a more serious and product-oriented way than a typical portfolio template.
 
-## [Live Demo](https://personal-website-tau-sandy.vercel.app/)
+## [Live](https://personal-website-tau-sandy.vercel.app/)
 
 ## Overview
 
