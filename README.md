@@ -1,6 +1,6 @@
 # Lazar's Personal Website
 
-Premium personal engineering website built to present my work, experience, resume, and contact flow in a more serious and product-oriented way than a typical portfolio template.
+Personal engineering website built to present my work, experience, resume, and contact flow in a more serious and product-oriented way than a typical portfolio template.
 
 ## [Live](https://personal-website-tau-sandy.vercel.app/)
 
