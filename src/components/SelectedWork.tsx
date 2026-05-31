@@ -24,6 +24,16 @@ const PROJECTS: Project[] = [
     tags: ["React", "TypeScript", "AI", "Node.js"],
   },
   {
+    title: "Flowstate",
+    description:
+      "Premium AI meeting-to-delivery workspace. Turns meeting transcripts, voice notes, and Zoom transcript files into structured decisions, owners, risks, follow-ups, execution briefs, and delivery boards. Features voice recording, Zoom transcript import, interactive Flow AI assistant, and a cinematic 2026 SaaS interface.",
+    liveUrl: "https://flowstate-zeta-henna.vercel.app/",
+    githubUrl: "https://github.com/lazarbukejlovic/flowstate",
+    image: "/flowstate.png",
+    featured: true,
+    tags: ["Next.js", "TypeScript", "OpenAI", "Clerk", "Prisma", "Vercel"],
+  },
+  {
     title: "AtlasBrief",
     description:
       "Flagship destination intelligence platform for travelers, remote workers, and long-stay planning. Built with React, TypeScript, Supabase, Stripe, and Vercel. Includes authentication, saved briefs, destination watchlists, traveler profiles, stay planning, billing, alerts, reports, trust/freshness signals, and production QA.",
@@ -59,42 +69,6 @@ const PROJECTS: Project[] = [
     githubUrl: "https://github.com/lazarbukejlovic/echo-room",
     image: "/echoroom.png",
     tags: ["React", "TypeScript", "REST APIs", "UI/UX"],
-  },
-  {
-    title: "ForgeDesk",
-    description:
-      "SaaS/workspace product with protected admin-style flows, product management UX, workspace structure, and Stripe checkout positioning. Focused on dashboard usability, operational workflows, and payment-oriented product behavior.",
-    liveUrl: "https://forgedesk-eosin.vercel.app/",
-    githubUrl: "https://github.com/lazarbukejlovic/forgedesk",
-    image: "/forgedesk.png",
-    tags: ["React", "TypeScript", "Stripe", "Dashboard"],
-  },
-  {
-    title: "Foundry Studios",
-    description:
-      "Booking and reservation platform centered on service scheduling, payment-oriented flows, and polished customer-facing booking UX. Built around clear service discovery, booking flow structure, and product-ready presentation.",
-    liveUrl: "https://foundrystudios.vercel.app/",
-    githubUrl: "https://github.com/lazarbukejlovic/foundrystudios",
-    image: "/images/fondry.png",
-    tags: ["React", "TypeScript", "Stripe", "Booking"],
-  },
-  {
-    title: "ClientFlow",
-    description:
-      "Business operations dashboard for managing clients, projects, invoices, deadlines, and workflow visibility. Built as a clean React/TypeScript product interface focused on structured client management and practical dashboard UX.",
-    liveUrl: "https://client-flow-tawny-eight.vercel.app/",
-    githubUrl: "https://github.com/lazarbukejlovic/client-flow",
-    image: "/images/ClientFlow.png",
-    tags: ["React", "TypeScript", "Dashboard", "PostgreSQL"],
-  },
-  {
-    title: "RoomPulse",
-    description:
-      "Workflow and task management product built around boards, rooms, activity tracking, and operational visibility. Built to practice SaaS-style product structure, responsive UI, and organized team/workflow presentation.",
-    liveUrl: "https://room-pulse-seven.vercel.app/",
-    githubUrl: "https://github.com/lazarbukejlovic/room-pulse",
-    image: "/images/Roompulse.png",
-    tags: ["React", "TypeScript", "SaaS", "UI/UX"],
   },
 ];
 
