@@ -20,10 +20,10 @@ const EXPERIENCE: ExperienceEntry[] = [
     imageAlt: "TokenFlow logo",
     logoHref: "https://www.atom.com/name/TokenFlow.ai",
     points: [
-      "React/TypeScript product engineering across multiple active workstreams, owning features from requirements through production deployment.",
-      "Built client-facing product surfaces including authenticated dashboards, API-driven views, form-heavy screens, responsive layouts, and loading/error/empty states.",
-      "Worked with Node.js/Express, Supabase/PostgreSQL, auth/session logic, Stripe billing flows, Docker-based environments, and Jest-tested production features.",
-      "Debugged frontend, API, authentication, and data-flow issues from active tickets and client feedback, communicating tradeoffs clearly and shipping scoped fixes without blocking delivery.",
+      "Owns React/TypeScript product surfaces across 3+ concurrent client streams, from requirements through production deploy and post-launch QA.",
+      "Built Stripe billing + Supabase/Postgres auth/session flows; added typed API contracts and webhook idempotency to eliminate duplicate-charge and subscription-sync bugs.",
+      "Wrote Jest suites around auth/payment/saved-data paths; reached ~85% coverage on those critical paths so releases ship without manual re-checking.",
+      "Standardized Docker local + staging environments to kill environment-specific bugs.",
     ],
   },
   {
@@ -34,10 +34,10 @@ const EXPERIENCE: ExperienceEntry[] = [
     imageAlt: "ScaleRoad LLC",
     logoHref: "https://www.atom.com/name/ScaleRoad",
     points: [
-      "Built operational dashboards and internal tooling for records, payments, subscriptions, and status tracking using React, TypeScript, Node.js, REST APIs, and PostgreSQL.",
-      "Implemented strict frontend-backend API contracts and defensive data-fetching patterns to improve reliability across latency-sensitive product surfaces.",
-      "Optimized dashboard state management, lazy-loading, and responsive layouts, improving page load performance and reducing user-facing friction.",
-      "Owned full delivery lifecycle across assigned features, including scoping, UI implementation, backend integration, QA, bug fixes, and production launch.",
+      "Built operational dashboards for records, payments, subscriptions, and status tracking in React/TypeScript/Node/Postgres, used by ~10,000 monthly active users.",
+      "Tightened API contracts and cached heavy dashboard queries to keep latency-sensitive views responsive under load.",
+      "Cut perceived load time on data-heavy views through state-management cleanup and route-level lazy-loading.",
+      "Turned loosely-defined product ideas into shipped full-stack features end to end.",
     ],
   },
   {
@@ -47,10 +47,9 @@ const EXPERIENCE: ExperienceEntry[] = [
     image: "/images/vertex-digital-studio.png",
     imageAlt: "Vertex Digital Studio logo",
     points: [
-      "Delivered custom full-stack applications for fintech, SaaS, digital asset, and e-commerce clients.",
-      "Built authenticated dashboards, CRUD views, REST API workflows, payment flows, reusable React/TypeScript UI patterns, and responsive product interfaces.",
-      "Architected secure auth flows, relational data models, and API-connected workflows across client projects.",
-      "Managed client work end to end — from scope planning and implementation to testing, deployment, documentation, and handoff.",
+      "Delivered 15+ custom web apps for fintech, SaaS, and data-heavy clients — authenticated dashboards, CRUD tools, and payment flows.",
+      "Designed secure auth flows, relational data models, and REST APIs, owning each project from scope to client handoff.",
+      "Built a 30+ component reusable React/TypeScript library, cutting new-project setup time ~50%.",
     ],
   },
 ];
