@@ -137,6 +137,13 @@ const EXPERIENCE = [
 
 const PROJECTS: ProjectItem[] = [
   {
+    name: "Sightline",
+    description:
+      "Market-ready competitive-intelligence SaaS that monitors competitor pricing pages, changelogs, news, and hiring pages, detects meaningful changes, summarizes impact with AI, tracks confidence and evidence, and supports cited Ask/RAG answers, scheduled digests, review queues, Stripe billing, AI usage analytics, audit logs, and real-time collaborative battlecards.",
+    href: "https://sightline-eosin.vercel.app/",
+    githubHref: "https://github.com/lazarbukejlovic/sightline",
+  },
+  {
     name: "MindPad AI",
     description:
       "AI-powered writing and knowledge management platform with intelligent note organization, contextual search, and a focused writing experience. Built to explore AI product integration with clean, user-first interface design.",
@@ -154,12 +161,6 @@ const PROJECTS: ProjectItem[] = [
     description:
       "Geopolitical risk intelligence dashboard with conflict monitoring, market-impact sections, historical context views, modular risk content, and decision-focused reporting flows across responsive layouts.",
     href: "https://georisk-platform.vercel.app/",
-  },
-  {
-    name: "DevPath Hub",
-    description:
-      "Developer growth platform for structured portfolio workflows, project planning, guided career preparation, reusable UI patterns, and clean product journeys.",
-    href: "https://devpath-hub.vercel.app/",
   },
   {
     name: "EchoRoom",

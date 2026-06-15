@@ -282,7 +282,7 @@ export default function HeroSection() {
               className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4"
             >
               {[
-                { label: "Years Experience", value: "3+" },
+                { label: "Years Experience", value: "4" },
                 { label: "Projects Shipped",  value: "15+" },
                 { label: "Stack",             value: "React · Node · Supabase" },
               ].map(({ label, value }) => (

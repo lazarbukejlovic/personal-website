@@ -14,6 +14,16 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
+    title: "Sightline",
+    description:
+      "Competitive-intelligence SaaS for tracking competitor changes, AI impact summaries, cited Ask/RAG answers, digests, billing, audit logs, and real-time battlecards.",
+    liveUrl: "https://sightline-eosin.vercel.app/",
+    githubUrl: "https://github.com/lazarbukejlovic/sightline",
+    image: "/sightline.png",
+    featured: true,
+    tags: ["Next.js", "TypeScript", "Supabase", "Prisma", "Stripe", "OpenAI", "Anthropic", "Inngest", "Liveblocks", "Vercel"],
+  },
+  {
     title: "MindPad AI",
     description:
       "AI-powered writing and knowledge management platform with intelligent note organization, contextual search, and a focused writing experience. Built to explore AI product integration with clean, user-first interface design.",
@@ -51,15 +61,6 @@ const PROJECTS: Project[] = [
     githubUrl: "https://github.com/lazarbukejlovic/georisk-platform",
     image: "/georisk.png",
     tags: ["React", "TypeScript", "REST APIs", "Dashboard"],
-  },
-  {
-    title: "DevPath Hub",
-    description:
-      "Developer growth and portfolio support platform for structured career workflows, project planning, portfolio positioning, and resource-driven learning. Built to help developers organize their path from learning to presenting stronger work.",
-    liveUrl: "https://devpath-hub.vercel.app/",
-    githubUrl: "https://github.com/lazarbukejlovic/devpath-hub",
-    image: "/devpath-hub.png",
-    tags: ["React", "TypeScript", "Node.js", "PostgreSQL"],
   },
   {
     title: "EchoRoom",
