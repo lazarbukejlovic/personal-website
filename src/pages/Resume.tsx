@@ -125,7 +125,7 @@ const EXPERIENCE = [
   {
     company: "Vertex Digital Studio",
     title: "Full-Stack Engineer",
-    period: "January 2023 – December 2023",
+    period: "June 2022 – December 2023",
     points: [
       "Delivered custom full-stack applications for fintech, SaaS, digital asset, and e-commerce clients.",
       "Built authenticated dashboards, CRUD views, REST API workflows, payment flows, reusable React/TypeScript UI patterns, and responsive product interfaces.",
@@ -425,7 +425,7 @@ export default function Resume() {
               <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                 <div>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-primary">
-                    Full-Stack Engineer
+                    Lead Full-Stack Engineer
                   </p>
                   <h1 className="mt-3 font-heading text-4xl font-bold tracking-tight text-white sm:text-5xl" style={{ letterSpacing: "-0.02em" }}>
                     LAZAR BUKEJLOVIC
