@@ -187,7 +187,7 @@ export default function HeroSection() {
                     animation: "robot-pulse-glow 2s ease-in-out infinite",
                   }}
                 />
-                Lead Full-Stack Engineer
+                Full-Stack Engineer
               </div>
             </motion.div>
 
