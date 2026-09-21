@@ -14,13 +14,13 @@ interface ExperienceEntry {
 const EXPERIENCE: ExperienceEntry[] = [
   {
     company: "TokenFlow",
-    title: "Full-Stack Engineer",
+    title: "Senior Full-Stack Engineer",
     period: "January 2025 – Present",
     image: "/images/tokenflow-logo.png",
     imageAlt: "TokenFlow logo",
     logoHref: "https://www.atom.com/name/TokenFlow.ai",
     points: [
-      "Owns React/TypeScript product surfaces across 3+ concurrent client streams, from requirements through production deploy and post-launch QA.",
+      "Owns React/TypeScript product surfaces across 3+ concurrent client streams, from requirements through production deploy and post-launch QA; leads a cross-functional team of 5–6 engineers (4 backend, 2 frontend) delivering a project for an international client.",
       "Built Stripe billing + Supabase/Postgres auth/session flows; added typed API contracts and webhook idempotency to eliminate duplicate-charge and subscription-sync bugs.",
       "Wrote Jest suites around auth/payment/saved-data paths; reached ~85% coverage on those critical paths so releases ship without manual re-checking.",
       "Standardized Docker local + staging environments to kill environment-specific bugs.",
